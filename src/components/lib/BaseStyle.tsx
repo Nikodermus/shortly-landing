@@ -23,7 +23,7 @@ const BaseStyle = createGlobalStyle`
     --color-violet-darkest:hsl(260, 8%, 14%);
 
     --color-gray:hsl(0, 0%, 75%);
-    --color-gray-voilet:hsl(257, 7%, 63%);
+    --color-gray-violet:hsl(257, 7%, 63%);
 
     ${createSizeVariables(BREAKPOINTS, 'breakpoint')}
     ${createSizeVariables(FONT_SIZES, 'font-size')}
@@ -42,8 +42,19 @@ const BaseStyle = createGlobalStyle`
     &::after,
     &::before,
     & {
-      transition: all 0.3s ease-in-out;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      transition: all var(--transition-1);
     }
+  }
+
+  canvas{
+    display: none;
+  }
+
+  h1,h2,h3,h4,h5,h6{
+    margin: 0;
   }
 
   html {
@@ -52,6 +63,7 @@ const BaseStyle = createGlobalStyle`
 
   body {
     font-size: var(--font-size-LG);
+    padding-top: 90px;
   }
 
   html, body {

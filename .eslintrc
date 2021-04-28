@@ -7,6 +7,7 @@
   "extends": ["airbnb-typescript-prettier"],
   "rules": {
     "@typescript-eslint/explicit-module-boundary-types": "error",
+    "jsx-a11y/anchor-is-valid": "off",
     "react/react-in-jsx-scope": "off",
     "react/no-unescaped-entities": [
       "error",
@@ -41,7 +42,10 @@
     {
       "files": ["test/**"],
       "rules": {
-        "import/no-extraneous-dependencies": ["error", { "devDependencies": true }]
+        "import/no-extraneous-dependencies": [
+          "error",
+          { "devDependencies": true }
+        ]
       }
     }
   ]
