@@ -49,8 +49,8 @@ const StyledA = styled.a`
 `;
 
 const StyledHR = styled.hr`
-  border-bottom: 1px solid var(--color-gray-violet);
   border: 0;
+  border-bottom: 1px solid var(--color-gray-violet);
   opacity: 0.5;
   width: 100%;
 `;

@@ -18,6 +18,7 @@ const BaseStyle = createGlobalStyle`
     --color-cyan:hsl(180, 66%, 49%);
     --color-red: hsl(0, 87%, 67%);
 
+    --color-violet-light: #f0f1f6;
     --color-violet:hsl(257, 27%, 26%);
     --color-violet-dark:hsl(255, 11%, 22%);
     --color-violet-darkest:hsl(260, 8%, 14%);
@@ -55,6 +56,10 @@ const BaseStyle = createGlobalStyle`
 
   h1,h2,h3,h4,h5,h6{
     margin: 0;
+    text-align: center;
+    font-size: var(--font-size-3XL);
+    font-weight: var(--font-weight-bld);
+    color: var(--color-violet-darkest);
   }
 
   html {
@@ -64,6 +69,7 @@ const BaseStyle = createGlobalStyle`
   body {
     font-size: var(--font-size-LG);
     padding-top: 90px;
+    overflow: hidden;
   }
 
   html, body {

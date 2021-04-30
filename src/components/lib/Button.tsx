@@ -1,13 +1,25 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-const Button = styled.button.attrs({
-  type: 'button',
-})`
+interface ButtonProps {
+  block?: boolean;
+}
+
+const Button = styled.button.attrs<ButtonProps>(({ type }) => ({
+  type: type || 'button',
+}))<ButtonProps>`
   background: var(--color-cyan);
   border-radius: var(--border-radius-XL);
   color: white;
   padding: var(--sizing-MD) var(--sizing-3XL);
   text-align: center;
+
+  ${({ block }) =>
+    block
+      ? css`
+          border-radius: var(--border-radius-SM);
+          width: 100%;
+        `
+      : ''}
 `;
 
 export default Button;

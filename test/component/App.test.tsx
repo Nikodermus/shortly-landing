@@ -4,6 +4,8 @@ import App from '../../pages/index';
 describe('App', () => {
   it('renders without crashing', () => {
     render(<App />);
-    expect(screen.getByRole('heading', { name: 'Test' })).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', { name: 'More than just shorter links' })
+    ).toBeInTheDocument();
   });
 });

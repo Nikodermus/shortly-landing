@@ -43,10 +43,8 @@ export const BREAKPOINTS = {
 } as const;
 
 export const FONT_WEIGHTS = {
-  reg: 400,
   med: 500,
   bld: 700,
-  blk: 900,
 } as const;
 
 export const LINE_HEIGHT = {

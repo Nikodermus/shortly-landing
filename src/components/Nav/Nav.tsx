@@ -12,8 +12,8 @@ const StyledNav = styled.nav`
   display: flex;
   justify-content: space-between;
   left: 0;
-  padding-bottom: var(--sizing-LG);
   padding: var(--sizing-2XL) var(--sizing-XL);
+  padding-bottom: var(--sizing-LG);
   position: fixed;
   top: 0;
   width: 100vw;
