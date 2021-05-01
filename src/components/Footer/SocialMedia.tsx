@@ -11,7 +11,12 @@ const SocialMedia: React.FC = () => {
   return (
     <StyledDiv>
       {SOCIAL_MEDIA.map((item) => (
-        <a href={item.url} target="_blank" rel="noreferrer noopener nofollow">
+        <a
+          href={item.url}
+          key={item.url}
+          rel="noreferrer noopener nofollow"
+          target="_blank"
+        >
           <img
             alt={`Follow us on ${item.name}`}
             src={`/images/icon-${item.icon}.svg`}

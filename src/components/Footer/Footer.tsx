@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
       <StyledLogo aria-label="Shortly" />
 
       {SITE_MAP.map((site) => (
-        <SiteMapBox {...site} />
+        <SiteMapBox key={site.title} {...site} />
       ))}
 
       <SocialMedia />

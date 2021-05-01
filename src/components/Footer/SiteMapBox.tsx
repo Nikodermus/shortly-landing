@@ -28,7 +28,7 @@ const SiteMapBox: React.FC<SiteMapBoxProps> = ({ title, items }) => {
       </Text>
 
       {items.map((item) => (
-        <Link href={item.path}>
+        <Link key={item.path} href={item.path}>
           <StyledA>{item.name}</StyledA>
         </Link>
       ))}
