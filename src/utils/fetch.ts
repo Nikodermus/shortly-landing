@@ -5,7 +5,7 @@ const customFetch = async <T>(
   const res = await fetch(input, init);
 
   if (!res || !res.ok) {
-    Promise.reject(res);
+    return Promise.reject(res);
   }
 
   const data = await res.json();
