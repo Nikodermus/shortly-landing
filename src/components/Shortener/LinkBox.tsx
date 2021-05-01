@@ -54,6 +54,7 @@ const LinkBox: React.FC<LinkBoxProps> = ({ link, selected, setSelected }) => {
       <StyledDiv>
         <StyledShort>{link.short}</StyledShort>
         <StyledButton
+          aria-selected={selected}
           block
           onClick={() => setSelected(link)}
           selected={selected}

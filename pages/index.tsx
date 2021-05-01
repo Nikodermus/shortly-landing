@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import styled from 'styled-components';
 
 import Button from '../src/components/lib/Button';
@@ -31,6 +32,10 @@ const Container = styled.main`
 const Home: React.FC = () => {
   return (
     <>
+      <Head>
+        <title>Shortly - More than just shorter links</title>
+      </Head>
+
       <StyledHeader>
         <figure>
           <StyledImg
@@ -50,6 +55,7 @@ const Home: React.FC = () => {
 
         <Button>Get Started</Button>
       </StyledHeader>
+
       <Container>
         <Shortener />
         <Features />

@@ -66,7 +66,13 @@ const Menu: React.FC<MenuProps> = ({ open, setOpen }) => {
   useClickOutside(ref, closeOutside);
 
   return (
-    <StyledAside open={open} aria-hidden={open ? 'false' : 'true'} ref={ref}>
+    <StyledAside
+      aria-expanded={open ? 'true' : 'false'}
+      aria-hidden={open ? 'false' : 'true'}
+      aria-label="menu"
+      open={open}
+      ref={ref}
+    >
       <Link href="/">
         <StyledA>Features</StyledA>
       </Link>

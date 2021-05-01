@@ -78,7 +78,7 @@ const Nav: React.FC = () => {
         </StyledH1>
 
         <StyledButton
-          aria-label="open"
+          aria-label="open menu"
           onClick={() => setOpen((prev) => !prev)}
           open={open}
         >
