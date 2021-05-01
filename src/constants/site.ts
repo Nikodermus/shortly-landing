@@ -1,2 +1,2 @@
-// eslint-disable-next-line import/prefer-default-export
+export const LOCALSTORAGE_KEY = 'shortly';
 export const MAX_LINKS = 3;

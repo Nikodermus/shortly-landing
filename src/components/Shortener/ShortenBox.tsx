@@ -22,7 +22,7 @@ const shimmer = keyframes`
   100% { left: 100% }
 `;
 
-const StyledForm = styled.form<{ loading: boolean }>`
+const StyledForm = styled.form<{ isLoading: boolean }>`
   --n-movement: calc(var(--movement) * -1);
 
   background: url('/images/bg-shorten-mobile.svg'), var(--color-violet);
@@ -30,15 +30,15 @@ const StyledForm = styled.form<{ loading: boolean }>`
   background-repeat: no-repeat;
   background-size: 75%;
   border-radius: var(--border-radius-MD);
-  margin-bottom: var(--n-movement);
   margin: auto;
+  margin-bottom: var(--n-movement);
   max-width: calc(100% - var(--sizing-3XL));
   padding: var(--sizing-XL);
   position: relative;
   transform: translateY(var(--n-movement));
 
-  ${({ loading }) =>
-    loading
+  ${({ isLoading }) =>
+    isLoading
       ? css`
           *,
           & {
@@ -58,8 +58,8 @@ const StyledForm = styled.form<{ loading: boolean }>`
     position: absolute;
     width: 100%;
 
-    ${({ loading }) =>
-      loading
+    ${({ isLoading }) =>
+      isLoading
         ? css`
             animation-play-state: running;
             opacity: 0.3;
@@ -83,6 +83,7 @@ const ShortenBox: React.FC<ShortenBoxProps> = ({ setItems }) => {
   const test: FormEventHandler = async (e) => {
     e.preventDefault();
     setLoading(true);
+    setError('');
 
     if (!link) {
       setError('Please add a link');
@@ -92,14 +93,13 @@ const ShortenBox: React.FC<ShortenBoxProps> = ({ setItems }) => {
           `https://api.shrtco.de/v2/shorten?url=${encodeURI(link)}`
         );
 
+        const item = {
+          original: data.result.original_link as string,
+          short: data.result.short_link as string,
+        };
+
         setItems((prev) => {
-          const newItems = [
-            {
-              original: data.result.original_link as string,
-              short: data.result.short_link as string,
-            },
-            ...prev,
-          ];
+          const newItems = [item, ...prev];
 
           newItems.length = Math.min(newItems.length, MAX_LINKS);
 
@@ -119,7 +119,7 @@ const ShortenBox: React.FC<ShortenBoxProps> = ({ setItems }) => {
   }, [link, setError]);
 
   return (
-    <StyledForm name="shortener" onSubmit={test} loading={loading}>
+    <StyledForm name="shortener" onSubmit={test} isLoading={loading}>
       <Input
         error={error}
         name="link"

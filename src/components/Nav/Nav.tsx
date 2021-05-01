@@ -17,6 +17,7 @@ const StyledNav = styled.nav`
   position: fixed;
   top: 0;
   width: 100vw;
+  z-index: var(--z-index-nav);
 `;
 
 const StyledH1 = styled.h1`

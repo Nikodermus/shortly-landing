@@ -26,6 +26,7 @@ const StyledAside = styled.aside<{ open: boolean }>`
   top: 90px;
   transform: translateX(-50%);
   width: calc(100vw - var(--sizing-3XL));
+  z-index: var(--z-index-modal);
 
   ${({ open }) =>
     open
