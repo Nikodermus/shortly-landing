@@ -20,6 +20,12 @@ const Button = styled.button.attrs<ButtonProps>(({ type }) => ({
           width: 100%;
         `
       : ''}
+
+  &[disabled] {
+    cursor: inherit;
+    filter: grayscale(0.35);
+    pointer-events: none;
+  }
 `;
 
 export default Button;

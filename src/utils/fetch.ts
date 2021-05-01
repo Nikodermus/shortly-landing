@@ -1,7 +1,7 @@
-const customFetch = async (
+const customFetch = async <T>(
   input: string,
   init?: RequestInit
-): Promise<Record<string, unknown>> => {
+): Promise<T> => {
   const res = await fetch(input, init);
 
   if (!res || !res.ok) {

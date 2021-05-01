@@ -47,6 +47,11 @@ const BaseStyle = createGlobalStyle`
       margin: 0;
       padding: 0;
       transition: all var(--transition-1);
+
+      @media (prefers-reduced-motion: reduce) {
+        animation: unset !important;
+        transition: 0 !important;
+      }
     }
   }
 

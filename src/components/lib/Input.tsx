@@ -9,28 +9,30 @@ const StyledInput = styled.input<InputProps>`
   background: white;
   border-radius: var(--border-radius-SM);
   border: var(--sizing-XS) solid transparent;
-  color: var(--color-gray);
+  color: var(--color-violet-darkest);
   margin-bottom: var(--sizing-LG);
   max-width: 100%;
   outline: 0;
   padding: var(--sizing-SM) var(--sizing-MD);
 
-  &:focus {
+  &:focus:not([readonly]) {
     border-color: var(--color-cyan);
   }
 
-  &:invalid {
+  &:invalid:not([readonly]) {
     border-color: var(--color-red);
   }
 
   ${(p) =>
     p.error
       ? css`
-          border-color: var(--color-red);
-          margin-bottom: var(--sizing-XS);
+          &:not([readonly]) {
+            border-color: var(--color-red);
+            margin-bottom: var(--sizing-XS);
 
-          &::placeholder {
-            color: var(--color-red);
+            &::placeholder {
+              color: var(--color-red);
+            }
           }
         `
       : ''}
