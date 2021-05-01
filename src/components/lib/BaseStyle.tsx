@@ -23,6 +23,7 @@ const BaseStyle = createGlobalStyle`
     --color-violet-dark:hsl(255, 11%, 22%);
     --color-violet-darkest:hsl(260, 8%, 14%);
 
+    --color-white: #fff;
     --color-gray:hsl(0, 0%, 75%);
     --color-gray-violet:hsl(257, 7%, 63%);
 

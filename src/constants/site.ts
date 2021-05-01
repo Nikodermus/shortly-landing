@@ -23,3 +23,84 @@ export const CARDS: Card[] = [
     image: 'fully-customizable',
   },
 ];
+
+export const SITE_MAP = [
+  {
+    title: 'Features',
+    items: [
+      {
+        name: 'Link Shortening',
+        path: '#',
+      },
+      {
+        name: 'Branded Links',
+        path: '#',
+      },
+      {
+        name: 'Analytics',
+        path: '#',
+      },
+    ],
+  },
+  {
+    title: 'Resources',
+    items: [
+      {
+        name: 'Blog',
+        path: '#',
+      },
+      {
+        name: 'Developers',
+        path: '#',
+      },
+      {
+        name: 'Support',
+        path: '#',
+      },
+    ],
+  },
+  {
+    title: 'Company',
+    items: [
+      {
+        name: 'About',
+        path: '#',
+      },
+      {
+        name: 'Our Team',
+        path: '#',
+      },
+      {
+        name: 'Careers',
+        path: '#',
+      },
+      {
+        name: 'Contact',
+        path: '#',
+      },
+    ],
+  },
+];
+
+export const SOCIAL_MEDIA = [
+  {
+    name: 'Facebook',
+    icon: 'facebook',
+    url: 'https://facebook.com',
+  },
+  {
+    name: 'Twitter',
+    icon: 'twitter',
+    url: 'https://twitter.com',
+  },
+  {
+    name: 'Pinterest',
+    icon: 'pinterest',
+    url: 'https://pinterest.com',
+  },
+  {
+    name: 'Instagram',
+    icon: 'instagram',
+    url: 'https://instagram.com',
+  },
+];
