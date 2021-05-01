@@ -13,8 +13,8 @@ export interface LinkBoxProps {
 const StyledArticle = styled.article`
   background: white;
   border-radius: var(--border-radius-MD);
-  margin-top: var(--sizing-LG);
   margin: auto;
+  margin-top: var(--sizing-LG);
   max-width: calc(100% - var(--sizing-3XL));
   position: relative;
 `;

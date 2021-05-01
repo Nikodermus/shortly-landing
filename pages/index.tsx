@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 import Button from '../src/components/lib/Button';
+import Features from '../src/components/Features/Features';
 import Shortener from '../src/components/Shortener/Shortener';
 import Text from '../src/components/lib/Text';
 
@@ -16,11 +17,11 @@ const StyledImg = styled.img`
 `;
 
 const StyledFigcaption = styled.figcaption`
-  margin-bottom: var(--font-size-LG);
-  margin-top: var(--font-size-XL);
+  font-size: var(--font-size-2XL);
+  margin: var(--sizing-LG) 0;
 `;
 
-const StyledDiv = styled.div`
+const Container = styled.main`
   --movement: var(--sizing-6XL);
 
   background: var(--color-violet-light);
@@ -49,9 +50,10 @@ const Home: React.FC = () => {
 
         <Button>Get Started</Button>
       </StyledHeader>
-      <StyledDiv>
+      <Container>
         <Shortener />
-      </StyledDiv>
+        <Features />
+      </Container>
     </>
   );
 };
