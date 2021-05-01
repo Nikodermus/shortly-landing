@@ -32,7 +32,7 @@ const StyledForm = styled.form<{ isLoading: boolean }>`
   border-radius: var(--border-radius-MD);
   margin: auto;
   margin-bottom: var(--n-movement);
-  max-width: calc(100% - var(--sizing-3XL));
+  max-width: var(--box);
   padding: var(--sizing-XL);
   position: relative;
   transform: translateY(var(--n-movement));

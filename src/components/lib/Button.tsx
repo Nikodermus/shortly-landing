@@ -26,6 +26,10 @@ const Button = styled.button.attrs<ButtonProps>(({ type }) => ({
     filter: grayscale(0.35);
     pointer-events: none;
   }
+
+  &:hover:not([disabled]) {
+    filter: brightness(1.1);
+  }
 `;
 
 export default Button;

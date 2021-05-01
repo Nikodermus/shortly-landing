@@ -24,7 +24,7 @@ export const createPlainVariables = (
   forVariables(variables, ([name, value]) => `--${varName}-${name}: ${value};`);
 
 const withMedia = (
-  size: 'tablet' | 'desktop' | 'desktop-XL',
+  size: 'desktop' | 'desktop-XL',
   rules: FlattenSimpleInterpolation
 ) => css`
   @media (min-width: ${BREAKPOINTS[size] || BREAKPOINTS.desktop}rem) {
@@ -39,10 +39,6 @@ export const mediaDesktop = (
 export const mediaDesktopXl = (
   rules: FlattenSimpleInterpolation
 ): FlattenSimpleInterpolation => withMedia('desktop-XL', rules);
-
-export const mediaTablet = (
-  rules: FlattenSimpleInterpolation
-): FlattenSimpleInterpolation => withMedia('tablet', rules);
 
 export const toREM = (size: number): string =>
   `calc(${size} / var(--font-size-px) * 1rem)`;

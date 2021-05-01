@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, css } from 'styled-components';
 
 import {
   BORDER_RADIUS,
@@ -11,7 +11,11 @@ import {
   TRANSITION,
   Z_INDEX,
 } from '../../constants/styled';
-import { createPlainVariables, createSizeVariables } from '../../utils/styled';
+import {
+  createPlainVariables,
+  createSizeVariables,
+  mediaDesktop,
+} from '../../utils/styled';
 
 const BaseStyle = createGlobalStyle`
   :root {
@@ -38,6 +42,7 @@ const BaseStyle = createGlobalStyle`
     ${createPlainVariables(Z_INDEX, 'z-index')}
 
     --font-size-px: ${FONT_SIZE_BASE_PX};
+    --box: clamp(320px,  calc(100% - var(--sizing-3XL)), 1000px)
   }
 
   * {
@@ -65,6 +70,10 @@ const BaseStyle = createGlobalStyle`
     text-align: center;
     font-weight: var(--font-weight-bld);
     color: var(--color-violet-darkest);
+
+    ${mediaDesktop(css`
+      text-align: left;
+    `)}
   }
 
   html {

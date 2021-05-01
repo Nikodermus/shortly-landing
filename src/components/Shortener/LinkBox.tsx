@@ -15,7 +15,7 @@ const StyledArticle = styled.article`
   border-radius: var(--border-radius-MD);
   margin: auto;
   margin-top: var(--sizing-LG);
-  max-width: calc(100% - var(--sizing-3XL));
+  max-width: var(--box);
   position: relative;
 `;
 

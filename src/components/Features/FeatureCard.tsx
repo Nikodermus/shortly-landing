@@ -13,7 +13,7 @@ const StyledArticle = styled.article`
   border-radius: var(--border-radius-MD);
   margin: auto;
   margin-top: var(--line);
-  max-width: calc(100% - var(--sizing-3XL));
+  max-width: var(--box);
   padding-bottom: var(--sizing-LG);
   padding-top: var(--sizing-6XL);
   position: relative;
