@@ -1,6 +1,7 @@
 import { Dispatch, SetStateAction } from 'react';
 import styled, { css } from 'styled-components';
 
+import { mediaDesktop, toREM } from '../../utils/styled';
 import Button from '../lib/Button';
 import ShortenedLink from '../../types/ShortenedLink.d';
 
@@ -17,9 +18,16 @@ const StyledArticle = styled.article`
   margin-top: var(--sizing-LG);
   max-width: var(--box);
   position: relative;
+
+  ${mediaDesktop(css`
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: var(--sizing-XS) var(--sizing-SM);
+  `)}
 `;
 
-const StyledP = styled.p`
+const StyledA = styled.a`
   border-bottom: 1px solid var(--color-violet-light);
   max-width: 100%;
   overflow: hidden;
@@ -27,15 +35,30 @@ const StyledP = styled.p`
   padding: var(--sizing-MD);
   text-overflow: ellipsis;
   white-space: nowrap;
+
+  ${mediaDesktop(css`
+    border-bottom: 0;
+  `)}
 `;
 
 const StyledDiv = styled.div`
   padding: var(--sizing-MD);
+
+  ${mediaDesktop(css`
+    align-items: center;
+    display: flex;
+    gap: var(--sizing-LG);
+    justify-content: flex-end;
+  `)}
 `;
 
 const StyledShort = styled.p`
   color: var(--color-cyan);
   padding-bottom: var(--sizing-MD);
+
+  ${mediaDesktop(css`
+    padding-bottom: 0;
+  `)}
 `;
 
 const StyledButton = styled(Button)<{ selected: boolean }>`
@@ -45,12 +68,22 @@ const StyledButton = styled(Button)<{ selected: boolean }>`
           background: var(--color-violet);
         `
       : ''}
+
+  ${mediaDesktop(css`
+    width: ${toREM(150)};
+  `)}
 `;
 
 const LinkBox: React.FC<LinkBoxProps> = ({ link, selected, setSelected }) => {
   return (
     <StyledArticle>
-      <StyledP>{link.original}</StyledP>
+      <StyledA
+        href={link.original}
+        rel="noopener noreferrer nofollow"
+        target="_blank"
+      >
+        {link.original}
+      </StyledA>
       <StyledDiv>
         <StyledShort>{link.short}</StyledShort>
         <StyledButton

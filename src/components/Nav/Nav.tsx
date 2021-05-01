@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
-import { mediaDesktop } from '../../utils/styled';
 import Logo from '../lib/Logo';
 import Menu from './Menu';
 import Portal from '../lib/Portal';
@@ -19,14 +18,6 @@ const StyledNav = styled.nav`
   top: 0;
   width: 100vw;
   z-index: var(--z-index-nav);
-
-  ${mediaDesktop(css`
-    left: 50%;
-    padding-left: 0;
-    padding-right: 0;
-    transform: translateX(-50%);
-    width: var(--box);
-  `)}
 `;
 
 const StyledH1 = styled.h1`

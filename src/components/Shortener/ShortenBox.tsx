@@ -8,6 +8,7 @@ import {
 import styled, { css, keyframes } from 'styled-components';
 
 import { MAX_LINKS } from '../../constants/site';
+import { mediaDesktop } from '../../utils/styled';
 import Button from '../lib/Button';
 import fetch from '../../utils/fetch';
 import Input from '../lib/Input';
@@ -24,8 +25,9 @@ const shimmer = keyframes`
 
 const StyledForm = styled.form<{ isLoading: boolean }>`
   --n-movement: calc(var(--movement) * -1);
+  --url: url('/images/bg-shorten-mobile.svg');
 
-  background: url('/images/bg-shorten-mobile.svg'), var(--color-violet);
+  background: var(--url), var(--color-violet);
   background-position: top right;
   background-repeat: no-repeat;
   background-size: 75%;
@@ -36,6 +38,19 @@ const StyledForm = styled.form<{ isLoading: boolean }>`
   padding: var(--sizing-XL);
   position: relative;
   transform: translateY(var(--n-movement));
+
+  ${mediaDesktop(css`
+    --url: url('/images/bg-shorten-desktop.svg');
+
+    background-size: cover;
+    display: flex;
+    gap: var(--sizing-MD);
+    padding: var(--sizing-4XL);
+
+    > * {
+      flex: 1 1 auto;
+    }
+  `)}
 
   ${({ isLoading }) =>
     isLoading
@@ -66,6 +81,20 @@ const StyledForm = styled.form<{ isLoading: boolean }>`
           `
         : ''}
   }
+`;
+
+const StyledInput = styled(Input)`
+  ${mediaDesktop(css`
+    margin: 0;
+  `)}
+`;
+
+const StyledButton = styled(Button)`
+  ${mediaDesktop(css`
+    flex: 0 1 auto;
+    white-space: nowrap;
+    width: auto;
+  `)}
 `;
 
 interface ShortenerResponse {
@@ -120,7 +149,7 @@ const ShortenBox: React.FC<ShortenBoxProps> = ({ setItems }) => {
 
   return (
     <StyledForm name="shortener" onSubmit={test} isLoading={loading}>
-      <Input
+      <StyledInput
         error={error}
         name="link"
         onChange={(e) => setLink(e.target.value)}
@@ -129,9 +158,9 @@ const ShortenBox: React.FC<ShortenBoxProps> = ({ setItems }) => {
         value={link}
       />
 
-      <Button type="submit" block disabled={loading}>
+      <StyledButton type="submit" block disabled={loading}>
         Shorten It!
-      </Button>
+      </StyledButton>
     </StyledForm>
   );
 };
