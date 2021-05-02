@@ -1,9 +1,9 @@
 import { render, screen } from '@testing-library/react';
-import App from '../../pages/index';
+import Header from '../../src/components/Header/Header';
 
-describe('App', () => {
+describe('Header', () => {
   it('renders without crashing', () => {
-    render(<App />);
+    render(<Header />);
     expect(
       screen.getByRole('heading', { name: 'More than just shorter links' })
     ).toBeInTheDocument();

@@ -1,7 +1,11 @@
 {
-  "name": "landing",
+  "name": "shortly-landing",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "Nicolas M Pardo",
+    "email": "nicolasm@nikodermus.media"
+  },
   "scripts": {
     "build": "next build",
     "dev": "next dev -p 3010",
