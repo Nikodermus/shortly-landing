@@ -102,6 +102,7 @@ const BaseStyle = createGlobalStyle`
   video {
     max-width: 100%;
     object-fit: contain;
+    overflow: visible;
   }
 
   button,
