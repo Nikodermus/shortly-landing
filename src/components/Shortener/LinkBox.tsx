@@ -14,6 +14,8 @@ export interface LinkBoxProps {
 const StyledArticle = styled.article`
   background: white;
   border-radius: var(--border-radius-MD);
+  display: flex;
+  flex-direction: column;
   margin: auto;
   margin-top: var(--sizing-LG);
   max-width: var(--box);
@@ -21,7 +23,7 @@ const StyledArticle = styled.article`
 
   ${mediaDesktop(css`
     align-items: center;
-    display: flex;
+    flex-direction: row;
     justify-content: space-between;
     padding: var(--sizing-XS) var(--sizing-SM);
   `)}

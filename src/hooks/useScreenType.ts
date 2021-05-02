@@ -1,4 +1,4 @@
-import { useCallback, useLayoutEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import debounce from 'lodash.debounce';
 
 import { BREAKPOINTS } from '../constants/styled';
@@ -17,7 +17,7 @@ const useScreenType = (): { isDesktop: boolean; isMobile: boolean } => {
 
   const debouncedSizeChange = debounce(sizeChanged, 200);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     sizeChanged();
     window.addEventListener('resize', debouncedSizeChange);
 
