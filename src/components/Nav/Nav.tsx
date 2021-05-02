@@ -29,6 +29,10 @@ const StyledH1 = styled.h1`
 `;
 
 const NavContainer = styled.div`
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+
   ${mediaDesktop(css`
     align-items: center;
     border-bottom: 0;
