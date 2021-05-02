@@ -1,8 +1,8 @@
 import { Dispatch, SetStateAction, useCallback, useRef } from 'react';
-import Link from 'next/link';
 import styled, { css } from 'styled-components';
 
-import Button from '../lib/Button';
+import NavActions from './NavActions';
+import NavLinks from './NavLinks';
 import useClickOutside from '../../hooks/useClickOutside';
 
 export interface MenuProps {
@@ -44,11 +44,6 @@ const StyledAside = styled.aside<{ open: boolean }>`
   }
 `;
 
-const StyledA = styled.a`
-  padding: var(--sizing-MD) var(--sizing-3XL);
-  text-align: center;
-`;
-
 const StyledHR = styled.hr`
   border: 0;
   border-bottom: 1px solid var(--color-gray-violet);
@@ -73,24 +68,9 @@ const Menu: React.FC<MenuProps> = ({ open, setOpen }) => {
       open={open}
       ref={ref}
     >
-      <Link href="/">
-        <StyledA>Features</StyledA>
-      </Link>
-
-      <Link href="/">
-        <StyledA>Pricing</StyledA>
-      </Link>
-
-      <Link href="/">
-        <StyledA>Resources</StyledA>
-      </Link>
-
+      <NavLinks />
       <StyledHR />
-
-      <Link href="/">
-        <StyledA>Login</StyledA>
-      </Link>
-      <Button>Sign Up</Button>
+      <NavActions />
     </StyledAside>
   );
 };

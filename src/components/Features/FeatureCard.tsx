@@ -93,7 +93,9 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ card, index }) => {
           <h3>{card.title}</h3>
         </StyledFigcaption>
       </figure>
-      <Text color="gray-violet">{card.content}</Text>
+      <Text color="gray-violet" as="p">
+        {card.content}
+      </Text>
     </StyledArticle>
   );
 };

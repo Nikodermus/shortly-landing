@@ -2,6 +2,14 @@ import { fireEvent, render, screen } from '@testing-library/react';
 
 import Nav from '../../src/components/Nav/Nav';
 
+beforeAll(() => {
+  Object.defineProperty(global.window, 'matchMedia', {
+    value: () => ({
+      matches: false,
+    }),
+  });
+});
+
 describe('Nav', () => {
   it('creates a collapsable menu', () => {
     render(<Nav />);
