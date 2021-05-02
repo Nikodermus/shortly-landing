@@ -58,7 +58,7 @@ const Features: React.FC = () => {
       <StyledDiv>
         <StyledH2>Advanced Statistics</StyledH2>
         <Text color="gray-violet">
-          Track how your link are performing across teh web with out advanced
+          Track how your link are performing across the web with out advanced
           statistics dashboard
         </Text>
       </StyledDiv>
